@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+	<title>Unit Menu</title>
+
+	<!-- CSS LINKS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="/JavaII_Mini_Project/css/unit-menu.css" />
+</head>
+<body>
+	<div class="text-center">
+		<h1 class="display-4 text-light">Fire Emblem Unit Manager</h1>
+	</div>
+	<div class="menu d-flex flex-column justify-content-around">
+		<a href="addUnitServlet" class="atag btn btn-primary rounded-pill text-center" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="Add a New Unit" data-bs-content="This option lets you add a new Unit to the Database." data-bs-placement="bottom" data-bs-custom-class="custom-popover">Add Unit</a>
+		<a href="viewUnitServlet" class="atag btn btn-primary rounded-pill text-center" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="View All Units" data-bs-content="See all of the units you have created or edited." data-bs-placement="bottom" data-bs-custom-class="custom-popover">View Unit List</a>
+		<a href="editUnitServlet" class="atag btn btn-primary rounded-pill" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="Edit a Unit" data-bs-content="Here you can modify a Unit's stats, weapons, name, or classes." data-bs-placement="bottom" data-bs-custom-class="custom-popover">Edit Unit</a>
+		<a href="editUnitServlet" class="atag btn btn-primary rounded-pill" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-title="Delete a Unit" data-bs-content="You can delete a Unit permanantly from the database, be careful, this is PERMANENT." data-bs-placement="bottom" data-bs-custom-class="custom-popover">Delete Unit</a>
+		<hr/>
+		<a href="index.html" class="atag btn btn-secondary rounded-pill">Back to Main Menu</a>
+	</div>
+	
+	
+	<!-- BOOTSTRAP -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+	<script>
+	//popovers
+	const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]');
+	const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl));
+	</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+body {
+	background: rgba(0, 0, 0, 0.8) url("../pics/weap-bg.jpg");
+	background-blend-mode: darken;
+	background-size: cover;
+}
+.menu {
+	width: 50vw;
+	height: 88vh;
+	margin: 0 auto;
+}
+.atag {
+	font-size: 40px;
+}
+
+.custom-popover {
+	width: 900px;
+	font-size: 16px;
+	text-align: center;
+	--bs-popover-max-width: 1000px;
+	--bs-popover-border-color: forestgreen;
+	--bs-popover-header-bg: forestgreen;
+  	--bs-popover-header-color: white;
+  	--bs-popover-body-padding-x: 1rem;
+  	--bs-popover-body-padding-y: .5rem;
+}
