@@ -8,16 +8,16 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Servlet implementation class ManageWeaponsServlet
+ * Servlet implementation class ViewAllUnitsServlet
  */
-@WebServlet("/manageWeaponsServlet")
-public class ManageWeaponsServlet extends HttpServlet {
+@WebServlet("/viewAllUnitsServlet")
+public class ViewAllUnitsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ManageWeaponsServlet() {
+    public ViewAllUnitsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -27,7 +27,13 @@ public class ManageWeaponsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		getServletContext().getRequestDispatcher("/weapon-menu.html").forward(request, response);
+		UnitHelper dao = new UnitHelper();
+		request.setAttribute("allUnits", dao.showAllUnits());
+		String path = "/unit-list.jsp";
+		if(dao.showAllUnits().isEmpty()){
+			path = "/unit-menu.html";
+		}
+		getServletContext().getRequestDispatcher(path).forward(request, response);
 	}
 
 	/**
