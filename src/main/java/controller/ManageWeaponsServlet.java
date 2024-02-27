@@ -27,7 +27,7 @@ public class ManageWeaponsServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		getServletContext().getRequestDispatcher("/weap-menu.html").forward(request, response);
+		getServletContext().getRequestDispatcher("/weapon-menu.html").forward(request, response);
 	}
 
 	/**

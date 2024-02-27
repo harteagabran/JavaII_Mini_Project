@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Edit Unit</title>
 </head>
 <body>
 	<form action = "editUnitServlet" method="post">
@@ -19,7 +19,7 @@
 	Luck: <input type = "number" name = "luck" min="0" value="${unitToEdit.luck}">
 	Defense: <input type ="number" name = "defense" min="0" value="${unitToEdit.defense}">
 	Resistence: <input type = "number" name = "resistence" min="0" value="${unitToEdit.resistence}">
-	<input type = "submit" value="Save Edited Item">
+	<input type = "submit" value="Save Edited Unit">
 	</form>
 </body>
 </html>

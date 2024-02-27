@@ -40,9 +40,9 @@ public class AddUnitServlet extends HttpServlet {
 		int defense = Integer.parseInt(request.getParameter("defense"));
 		int resistence = Integer.parseInt(request.getParameter("resistence"));
 		
-		Unit li = new Unit(unitName,level,hitpoints,strength,magic,skill,sp,luck,defense,resistence);
+		Unit u = new Unit(unitName,level,hitpoints,strength,magic,skill,sp,luck,defense,resistence);
 		UnitHelper dao = new UnitHelper();
-		dao.insertUnit(li);
+		dao.insertUnit(u);
 		
 		getServletContext().getRequestDispatcher("/add-unit.html").forward(request, response);
 	}
