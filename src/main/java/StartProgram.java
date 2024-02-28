@@ -1,7 +1,9 @@
 import java.util.ArrayList;
 import java.util.List;
 
+import controller.UnitHelper;
 import controller.WeaponHelper;
+import model.Unit;
 import model.Weapon;
 
 /**
@@ -81,6 +83,14 @@ public class StartProgram {
 		
 		for(Weapon w : ws) {
 			wh.insertWeapon(w);
+		}
+		
+		UnitHelper uh = new UnitHelper();
+		Unit a = new Unit("h",1,1,1,1,1,1,1,1,1,ws);
+		uh.insertUnit(a);
+		List<Unit> li = uh.showAllUnits();
+		for(Unit u : li) {
+			System.out.print(u.toString());
 		}
 	}
 

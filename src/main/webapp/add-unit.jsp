@@ -19,13 +19,11 @@
 		Luck: <input type="number" name="luck" min="0" value="0">
 		Defense: <input type="number" name="defense" min="0" value="0">
 		Resistence: <input type="number" name="resistence" min="0" value="0">
-		<c:forEach items="${requestScope.allWeapons}" var="currentWeapon">
-			<tr>
-				<td>
-					${currentWeapon.weaponName}
-				</td>
-			</tr>
-		</c:forEach>
+		<select name="allWeaponsToAdd" multiple size="6">
+			<c:forEach items="${requestScope.allWeapons}" var="currentWeapon">
+				<option value="${currentWeapon.id}">${currentWeapon.weaponName}</option>
+			</c:forEach>
+		</select>
 		<input type="submit" value="Add Item">
 	</form> <br />
 
