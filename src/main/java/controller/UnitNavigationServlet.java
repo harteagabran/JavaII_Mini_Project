@@ -1,8 +1,6 @@
 package controller;
 
 import java.io.IOException;
-import java.util.List;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -10,7 +8,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Unit;
-import model.Weapon;
 
 /**
  * Servlet implementation class UnitNavigationServlet
@@ -34,7 +31,7 @@ public class UnitNavigationServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		doPost(request, response);
+		
 	}
 
 	/**
@@ -45,7 +42,6 @@ public class UnitNavigationServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		UnitHelper dao = new UnitHelper();
-		WeaponHelper wao = new WeaponHelper();
 		String act = request.getParameter("doThisToUnit");
 
 		String path = "/viewAllUnitsServlet";
@@ -70,9 +66,7 @@ public class UnitNavigationServlet extends HttpServlet {
 				System.out.println("Forgot to select an unit");
 			}
 		} else if (act.equals("add")) {
-			List<Weapon> allWeapons = wao.showAllWeapons();
-			request.setAttribute("allWeapons", allWeapons);
-			path = "/add-unit.jsp";
+			path = "/add-unit.html";
 		}
 
 		getServletContext().getRequestDispatcher(path).forward(request, response);
