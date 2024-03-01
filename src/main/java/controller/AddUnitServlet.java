@@ -61,7 +61,7 @@ public class AddUnitServlet extends HttpServlet {
 		UnitHelper dao = new UnitHelper();
 		dao.insertUnit(u);
 		
-		getServletContext().getRequestDispatcher("/add-unit.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/unit-menu.html").forward(request, response);
 	}
     
 	/**

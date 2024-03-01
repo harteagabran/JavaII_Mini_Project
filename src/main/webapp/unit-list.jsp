@@ -33,7 +33,7 @@
 					<td>
 						<input type="radio" name="id" value="${currentUnit.id}">
 					</td>
-					<td>${currentUnit.unitName} - </td>
+					<td>${currentUnit.unitName}</td>
 					<td>${currentUnit.level}</td>
 					<td>${currentUnit.hitPoints}</td>
 					<td>${currentUnit.strength}</td>
@@ -44,11 +44,6 @@
 					<td>${currentUnit.defense}</td>
 					<td>${currentUnit.resistence}</td>
 				</tr>
-				<c:forEach items="${currentUnit.listOfWeapons}" var="currentWeapon">
-					<tr>
-						<td>${currentWeapon.weaponName}</td>
-					</tr>
-				</c:forEach>
 			</c:forEach>
 		</tbody>
 	
