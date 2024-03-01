@@ -70,6 +70,17 @@
 				</div>
 			</div>
 		</div>
+		<!-- Weapons -->
+		<div id="weapons">
+			<h2 class="text-light">Weapons</h2>
+			<select name="allWeaponsToAdd" multiple size="6">
+				<c:forEach items="${unitToEdit.listOfWeapons}" var="currentWeapon">
+					<option value="${currentWeapon.id}">
+						${currentWeapon.weaponName}
+					</option>
+			</c:forEach>
+			</select>
+		</div>
 		<button type="submit" class="btn btn-primary">Done</button>
 		<a href="unit-menu.html" class="btn btn-secondary">Back</a>
 	</form>

@@ -1,6 +1,9 @@
 package controller;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -8,6 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import model.Unit;
+import model.Weapon;
 
 /**
  * Servlet implementation class EditUnitServlet
@@ -42,6 +46,7 @@ public class EditUnitServlet extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		UnitHelper dao = new UnitHelper();
+		WeaponHelper wh = new WeaponHelper();
 
 		Integer tempId = Integer.parseInt(request.getParameter("id"));
 		String unitName = request.getParameter("unitName");
@@ -54,6 +59,17 @@ public class EditUnitServlet extends HttpServlet {
 		int luck = Integer.parseInt(request.getParameter("luck"));
 		int defense = Integer.parseInt(request.getParameter("defense"));
 		int resistence = Integer.parseInt(request.getParameter("resistence"));
+		
+		String[] selectedWeapons = request.getParameterValues("allWeaponsToAdd");
+		List<Weapon> selectedWeaponsInList = new ArrayList<Weapon>();
+		//make sure something was selected – otherwise we get a null pointer exception
+		if (selectedWeapons != null && selectedWeapons.length > 0) {
+    		for(int i = 0; i<selectedWeapons.length; i++) {
+	    		System.out.println(selectedWeapons[i]);
+	    		Weapon c = wh.searchForWeaponById(Integer.parseInt(selectedWeapons[i]));
+	    		selectedWeaponsInList.add(c);
+    		}
+		}
 
 		Unit unitToUpdate = dao.searchForUnitById(tempId);
 		unitToUpdate.setUnitName(unitName);
@@ -66,6 +82,7 @@ public class EditUnitServlet extends HttpServlet {
 		unitToUpdate.setLuck(luck);
 		unitToUpdate.setDefense(defense);
 		unitToUpdate.setResistence(resistence);
+		unitToUpdate.setListOfWeapons(selectedWeaponsInList);
 
 		dao.updateItem(unitToUpdate);
 
