@@ -77,10 +77,10 @@
 		<!-- Weapons -->
 		<div id="weapons">
 			<h2 class="text-light">Weapons</h2>
-			<select name="allWeaponsToAdd" multiple size="6">
+			<select class="w-100" name="allWeaponsToAdd" multiple size="6">
 				<c:forEach items="${requestScope.allWeapons}" var="currentWeapon">
 					<option value="${currentWeapon.id}">
-						${currentWeapon.weaponName}
+						${currentWeapon.weaponName} - Mastery: ${currentWeapon.mastery} - Endurance: ${currentWeapon.endurance}
 					</option>
 			</c:forEach>
 			</select>
